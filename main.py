@@ -20,7 +20,7 @@ def viewPortfolio():
     count = 1
     for stock in portfolio:
         gain_loss = stock.calculateGainLoss()
-        gain_loss_str = f"${gain_loss:.2f}" if gain_loss >= 0 else f"(${abs(gain_loss):.2f})"
+        gain_loss_str = f"${gain_loss:10.2f}" if gain_loss >= 0 else f"(${abs(gain_loss):9.2f}:{15}"
         print(f"{count}. {stock.name:{17}}{stock.ticker:{10}}{stock.sector:{35}}${stock.currentPrice:{6}.2f}{stock.numOfShares:{9}}{gain_loss_str:{15}}")
         count += 1
 
@@ -33,7 +33,7 @@ def searchBySector(sector):
         if stock.sector.lower() == sector.lower():
             gain_loss = stock.calculateGainLoss()
             gain_loss_str = f"${gain_loss:.2f}" if gain_loss >= 0 else f"(${abs(gain_loss):.2f})"
-            print(f"{count}. {stock.name:{17}}{stock.ticker:{10}}{stock.sector:{35}}${stock.currentPrice:{6}.2f}{stock.numOfShares:{9}}{gain_loss_str:{15}}")
+            print(f"{count}. {stock.name:{17}}{stock.ticker:{10}}{stock.sector:{35}}${stock.currentPrice:{6}.2f}{stock.numOfShares:{9}}{gain_loss_str}")
             count += 1
 
 
