@@ -9,4 +9,6 @@ class Stock:
 
     def updatePrice(self, updateValue):
         self.currentPrice = updateValue
-
+    
+    def calculateGainLoss(self):
+        return round((self.currentPrice - self.originalPrice) * self.numOfShares, 2)
