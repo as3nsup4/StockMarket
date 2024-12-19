@@ -62,21 +62,30 @@ while status:
     mainMenu()
     choice = input("Select from the following options:")
     if choice == "1":
+        print("")
         name = input("Enter the Name of the Stock: ")
         ticker = input("Enter the stock ticker name: ")
         tick = yf.Ticker(ticker).info
         sector = tick.get('industry', 'Unknown')
         numOfShares = int(input("Enter number of stock shares to buy: "))
         addStock(name, ticker, sector, numOfShares)
+        print("")
     elif choice == "2":
+        print("")
         updatePrices()
         viewPortfolio()
+        print("")
     elif choice == "3":
+        print("")
         sector = input("Enter the sector you want to search for: ")
         searchBySector(sector)
+        print("")
     elif choice == "4":
+        print("")
         viewPortfolio()
+        print("")
     elif choice == "5":
+        print("")
         status = False
     input("\nPress Enter to continue... ")
 
