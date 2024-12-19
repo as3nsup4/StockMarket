@@ -25,16 +25,13 @@ def searchBySector(sector):
     count = 1
     for stock in portfolio:
         if stock.sector.lower() == sector.lower():
-            print(f"{count}. {stock.name:{17}}{stock.ticker:{10}}{stock.sector:{35}}${stock.currentPrice:{6}}{stock.num0fShares:{9}}")
+            print(f"{count}. {stock.name:{17}}{stock.ticker:{10}}{stock.sector:{35}}${stock.currentPrice:{6}}{stock.numOfShares:{9}}")
             count += 1
 
 def updatePrices():
     for stock in portfolio:
-        try:
-            new_price = round(float(stock_info.get_live_price(stock.ticker)), 2)
-            stock.updatePrice(new_price)
-        except Exception as e:
-            print(f"Error updating price for {stock.name} ({stock.ticker}): {e}")
+        new_price = round(float(stock_info.get_live_price(stock.ticker)), 2)
+        stock.updatePrice(new_price)
 
 def mainMenu():
     print("\nMain Menu")
