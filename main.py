@@ -2,6 +2,7 @@ from stock import Stock
 from yahoo_fin import stock_info
 import yfinance as yf
 import warnings
+import os
 warnings.filterwarnings("ignore")
 
 portfolio = []
@@ -54,6 +55,7 @@ print("Welcome to my stock portfolio")
 status = True
 
 while status:
+    #os.system('clear')
     mainMenu()
     choice = input("Select from the following options:")
     if choice == "1":
@@ -73,5 +75,6 @@ while status:
         viewPortfolio()
     elif choice == "5":
         status = False
+    input("\nPress Enter to continue... ")
 
 print("Thanks for using my stock portfolio program. Have a nice day")
